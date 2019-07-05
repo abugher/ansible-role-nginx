@@ -3,7 +3,7 @@ install_packages:
   - 'nginx'
   - 'nginx-extras'
   - 'fcgiwrap'
-  - 'php5-fpm'
+  - 'php-fpm'
 remove_packages:
   - 'apache2'
   - 'apache2-mpm-worker'

@@ -1,0 +1,9 @@
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+
+server {
+  listen                80;
+  server_name           {{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }}{% for alias in hostvars.aliases %} {{ alias }} {{ alias }}.{{ domain }}{% endfor %} {{ hostvars.ip_address }};
+  return 301            https://{{ inventory_hostname }}.{{ domain }}$request_uri;
+}
+
+

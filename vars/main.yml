@@ -8,6 +8,12 @@ remove_packages:
   - 'apache2-mpm-worker'
   - 'apache2.2-bin'
   - 'apache2.2-common'
+create_files:
+  - owner:              'root'
+    group:              'root'
+    mode:               '0755'
+    state:              'directory'
+    path:               '/etc/nginx/subdirs'
 install_files:
   - owner:              'root'
     group:              'root'

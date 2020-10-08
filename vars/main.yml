@@ -23,7 +23,7 @@ create_files:
     group:              'root'
     mode:               '0755'
     state:              'directory'
-    path:               '/etc/nginx/load_modules.d'
+    path:               '/etc/nginx/modules-enabled'
 install_files:
   - owner:              'root'
     group:              'root'

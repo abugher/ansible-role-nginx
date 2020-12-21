@@ -3,11 +3,12 @@
 server {
   listen                80;
   server_name           {{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }}{% for alias in hostvars.aliases %} {{ alias }} {{ alias }}.{{ domain }}{% endfor %} {{ hostvars.ip_address }};
-  return 301            https://{{ inventory_hostname }}.{{ domain }}$request_uri;
-  location /public/ {
+  location / {
+    return 301          https://{{ inventory_hostname }}.{{ domain }}$request_uri;
+  }
+  location /public {
     root                /usr/share/nginx/www/public;
     autoindex           on;
     try_files           $uri $uri/ =404;
   }
-
 }

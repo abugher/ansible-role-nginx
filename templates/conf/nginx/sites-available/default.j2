@@ -7,7 +7,7 @@ server {
     return 301          https://{{ inventory_hostname }}.{{ domain }}$request_uri;
   }
   location /public {
-    root                /usr/share/nginx/www/public;
+    root                /usr/share/nginx/www;
     autoindex           on;
     try_files           $uri $uri/ =404;
   }

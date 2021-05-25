@@ -2,7 +2,7 @@
 
 server {
   listen                80;
-  server_name           {{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }}{% for alias in hostvars.aliases %} {{ alias }} {{ alias }}.{{ domain }}{% endfor %} {{ hostvars.ip_address }};
+  server_name           {{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }}{% for alias in hostvars[inventory_hostname]['aliases'] %} {{ alias }} {{ alias }}.{{ domain }}{% endfor %} {{ hostvars[inventory_hostname]['ip_address']}};
   location / {
     return 301          https://{{ inventory_hostname }}.{{ domain }}$request_uri;
   }

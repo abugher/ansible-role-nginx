@@ -1,11 +1,11 @@
 server {
-  listen 443 default_server ssl;
-  ssl_certificate /etc/ssl/certs/{{ inventory_hostname }}.pem;
-  ssl_certificate_key /etc/ssl/private/{{ inventory_hostname }}.pem;
-  server_name {{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }} {{ hostvars[inventory_hostname]['ip_address'] }};
-  access_log /var/log/nginx/ssl.access.log;
-  root /usr/share/nginx/html;
-  index index.html index.htm;
+  listen 		443 default_server ssl;
+  ssl_certificate       /etc/ssl/certs/chain.pem;
+  ssl_certificate_key 	/etc/ssl/private/{{ inventory_hostname }}.pem;
+  server_name 		{{ inventory_hostname }} {{ inventory_hostname }}.{{ domain }} {{ hostvars[inventory_hostname]['ip_address'] }};
+  access_log 		/var/log/nginx/ssl.access.log;
+  root 			/usr/share/nginx/html;
+  index 		index.html index.htm;
 
   include subdirs/*;
 }

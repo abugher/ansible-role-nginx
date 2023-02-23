@@ -1,4 +1,6 @@
 ---
+dependencies:
+  - 'ssl_identity'
 install_packages:
   - 'nginx'
   - 'nginx-extras'

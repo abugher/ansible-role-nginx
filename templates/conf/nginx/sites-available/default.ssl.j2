@@ -8,4 +8,10 @@ server {
   index 		index.html index.htm;
 
   include subdirs/*;
+
+  location /public {
+    root                /usr/share/nginx/html;
+    autoindex           on;
+    try_files           $uri $uri/ =404;
+  }
 }

@@ -24,6 +24,11 @@ create_files:
     mode:               '0755'
     state:              'directory'
     path:               '/etc/nginx/modules-enabled'
+  - owner:              'root'
+    group:              'adm'
+    mode:               '0755'
+    state:              'directory'
+    path:               '/var/log/nginx'
 install_files:
   - owner:              'root'
     group:              'root'

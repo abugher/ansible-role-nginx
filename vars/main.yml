@@ -62,7 +62,7 @@ symlinks:
     dest:               '/etc/nginx/sites-enabled/default.ssl'
 enable_services:
   - 'nginx'
-start_services:
-  - 'nginx'
 restart_services:
+  - 'nginx'
+start_services:
   - 'nginx'
